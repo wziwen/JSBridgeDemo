@@ -1,6 +1,7 @@
 ### 使用
 #### 添加依赖
-这里使用的JSBridge来自GitHub(https://github.com/lzyzsd/JsBridge).因为GitHub上的版本使用时引入后不能再继续使用WebView.setWebViewClient()方法,如果需要WebView.setWebViewClient()使用修改后的代码(代码在柬埔寨Top-Android项目中可以找到.两种方式根据需要选择:
+这里使用的JSBridge来自GitHub(https://github.com/lzyzsd/JsBridge).  
+因为GitHub上的版本使用时引入后不能再继续使用WebView.setWebViewClient()方法,如果需要WebView.setWebViewClient()使用修改后的代码(代码在柬埔寨Top-Android项目中可以找到.两种方式根据需要选择:
 * 修改版代码:
 1. 找到 jsbridge 文件夹到项目.
 2. 在项目的settings.gradle文件添加一行:
