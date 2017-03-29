@@ -1,4 +1,4 @@
-### JSBridge使用
+## JSBridge使用
 
 #### 代码运行
 先启动Vue项目
@@ -7,6 +7,14 @@ npm install
 npm run dev
 ```
 Android项目需要修改MainActivity.java里面的HOME_URL.
+### 使用JSBridge
+JSBridge 使用时主要有三个功能：
+* 路由拦截  
+拦截Vue-Router的路由跳转。注意如果不是Vue-Router的跳转，无法拦截（可以通过WebViewClient的shouldOverrideUrlLoading（）方法拦截）
+* JS调Java方法
+* Java调JS方法
+这三个功能都需要先添加JSBridge的依赖，并使用BridgeWebView
+### 添加依赖并使用BridgeWebView
 #### 添加依赖
 这里使用的JSBridge来自GitHub(https://github.com/lzyzsd/JsBridge).  
 因为GitHub上的版本使用时引入后不能再继续使用WebView.setWebViewClient()方法,如果需要WebView.setWebViewClient()使用修改后的代码(jsbridge文件夹）.两种方式根据需要选择:
@@ -48,6 +56,7 @@ dependencies {
     android:layout_width="match_parent"
     android:layout_height="match_parent"/>
 ```
+### 实现具体的功能
 #### Vue路由拦截(修改版代码)
 Vue的页面跳转是不触发页面的重载的,这里可以使用Vue-router和JSBridge进行url跳转拦截.
 1. 在Vue项目的main.js中, 实现router.beforeEach方法
