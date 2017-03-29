@@ -46,14 +46,15 @@ Vue的页面跳转是不触发页面的重载的,这里可以使用Vue-router和
 router.beforeEach((to, from, next) => {
     console.info("router beforeEach")
     // 这里的next方法一定要调
-    if  (from.query.client ==='android') {
+    // if  (from.query.client ==='android') {
+    if  (window.WebViewJavascriptBridge) {
         WebViewJavascriptBridge.callHandler(
             'router'
             , to.fullPath
             , function(responseData) {
                 // android 触发了方法， 继续做页面跳转
                 console.info("router callback, process next: " + responseData)
-                if (responseData) {
+                if (responseData === 'true') {
                     console.info("router next: " + false)
                     next(false)
                 } else {
@@ -62,7 +63,8 @@ router.beforeEach((to, from, next) => {
                 }
             }
         )
-    } else {
+    }
+    else {
         console.info("router beforeEach")
         next(true)
     }
