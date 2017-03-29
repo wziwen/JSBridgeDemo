@@ -1,21 +1,21 @@
-### Ê¹ÓÃ
-#### Ìí¼ÓÒÀÀµ
-ÕâÀïÊ¹ÓÃµÄJSBridgeÀ´×ÔGitHub(https://github.com/lzyzsd/JsBridge).ÒòÎªGitHubÉÏµÄ°æ±¾Ê¹ÓÃÊ±ÒıÈëºó²»ÄÜÔÙ¼ÌĞøÊ¹ÓÃWebView.setWebViewClient()·½·¨,Èç¹ûĞèÒªWebView.setWebViewClient()Ê¹ÓÃĞŞ¸ÄºóµÄ´úÂë(´úÂëÔÚ¼íÆÒÕ¯Top-AndroidÏîÄ¿ÖĞ¿ÉÒÔÕÒµ½.Á½ÖÖ·½Ê½¸ù¾İĞèÒªÑ¡Ôñ:
-* ĞŞ¸Ä°æ´úÂë:
-1. ÕÒµ½ jsbridge ÎÄ¼ş¼Ğµ½ÏîÄ¿.
-2. ÔÚÏîÄ¿µÄsettings.gradleÎÄ¼şÌí¼ÓÒ»ĞĞ:
+### ä½¿ç”¨
+#### æ·»åŠ ä¾èµ–
+è¿™é‡Œä½¿ç”¨çš„JSBridgeæ¥è‡ªGitHub(https://github.com/lzyzsd/JsBridge).å› ä¸ºGitHubä¸Šçš„ç‰ˆæœ¬ä½¿ç”¨æ—¶å¼•å…¥åä¸èƒ½å†ç»§ç»­ä½¿ç”¨WebView.setWebViewClient()æ–¹æ³•,å¦‚æœéœ€è¦WebView.setWebViewClient()ä½¿ç”¨ä¿®æ”¹åçš„ä»£ç (ä»£ç åœ¨æŸ¬åŸ”å¯¨Top-Androidé¡¹ç›®ä¸­å¯ä»¥æ‰¾åˆ°.ä¸¤ç§æ–¹å¼æ ¹æ®éœ€è¦é€‰æ‹©:
+* ä¿®æ”¹ç‰ˆä»£ç :
+1. æ‰¾åˆ° jsbridge æ–‡ä»¶å¤¹åˆ°é¡¹ç›®.
+2. åœ¨é¡¹ç›®çš„settings.gradleæ–‡ä»¶æ·»åŠ ä¸€è¡Œ:
 ```
-include ':jsbridge' //jsbridge¾ÍÊÇ¸Õ¸Õ¸´ÖÆµÄÎÄ¼ş¼ĞÃû×Ö
+include ':jsbridge' //jsbridgeå°±æ˜¯åˆšåˆšå¤åˆ¶çš„æ–‡ä»¶å¤¹åå­—
 ```
-3. ÔÚ¾ßÌåµÄappÎÄ¼ş¼ĞµÄbuild.gradleÄÚÕÒµ½dependenciesÌí¼ÓcompileÒÀÀµ:
+3. åœ¨å…·ä½“çš„appæ–‡ä»¶å¤¹çš„build.gradleå†…æ‰¾åˆ°dependenciesæ·»åŠ compileä¾èµ–:
     ```
     dependencies {
         ...
         compile project(':jsbridge')
     }
     ```
-* GitHub°æ±¾(GitHub°æ´úÂëÎŞ·¨¼àÌıÂ·ÓÉÌø×ªºÍÊ¹ÓÃWebView.setWebViewClient()·½·¨: 
-1. ÔÚÏîÄ¿µÄ¸ùÎÄ¼ş¼ĞµÄbuild.gradleÖĞÕÒµ½allprojects¼ÓÈëmaven²Ö¿âµØÖ·:
+* GitHubç‰ˆæœ¬(GitHubç‰ˆä»£ç æ— æ³•ç›‘å¬è·¯ç”±è·³è½¬å’Œä½¿ç”¨WebView.setWebViewClient()æ–¹æ³•: 
+1. åœ¨é¡¹ç›®çš„æ ¹æ–‡ä»¶å¤¹çš„build.gradleä¸­æ‰¾åˆ°allprojectsåŠ å…¥mavenä»“åº“åœ°å€:
 ``` 
 allprojects {
     repositories {
@@ -24,34 +24,34 @@ allprojects {
     }
 }
 ```
-2. ÔÚ¾ßÌåµÄappÎÄ¼ş¼ĞµÄbuild.gradleÄÚÕÒµ½dependenciesÌí¼ÓcompileÒÀÀµ:
+2. åœ¨å…·ä½“çš„appæ–‡ä»¶å¤¹çš„build.gradleå†…æ‰¾åˆ°dependenciesæ·»åŠ compileä¾èµ–:
 ```
 dependencies {
     ...
     compile 'com.github.lzyzsd:jsbridge:1.0.4'
 }
 ```
-#### Ê¹ÓÃBridgeWebView
-ÔÚĞèÒªÊµÏÖJSºÍJava»¥Ïàµ÷ÓÃµÄµØ·½, ÓÃBridgeWebViewÌæ»»WebView
+#### ä½¿ç”¨BridgeWebView
+åœ¨éœ€è¦å®ç°JSå’ŒJavaäº’ç›¸è°ƒç”¨çš„åœ°æ–¹, ç”¨BridgeWebViewæ›¿æ¢WebView
 ```
 <com.github.lzyzsd.jsbridge.BridgeWebView
     android:id="@+id/web_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"/>
 ```
-#### VueÂ·ÓÉÀ¹½Ø(ĞŞ¸Ä°æ´úÂë)
-VueµÄÒ³ÃæÌø×ªÊÇ²»´¥·¢Ò³ÃæµÄÖØÔØµÄ,ÕâÀï¿ÉÒÔÊ¹ÓÃVue-routerºÍJSBridge½øĞĞurlÌø×ªÀ¹½Ø.
-1. ÔÚVueÏîÄ¿µÄmain.jsÖĞ, ÊµÏÖrouter.beforeEach·½·¨
+#### Vueè·¯ç”±æ‹¦æˆª(ä¿®æ”¹ç‰ˆä»£ç )
+Vueçš„é¡µé¢è·³è½¬æ˜¯ä¸è§¦å‘é¡µé¢çš„é‡è½½çš„,è¿™é‡Œå¯ä»¥ä½¿ç”¨Vue-routerå’ŒJSBridgeè¿›è¡Œurlè·³è½¬æ‹¦æˆª.
+1. åœ¨Vueé¡¹ç›®çš„main.jsä¸­, å®ç°router.beforeEachæ–¹æ³•
 ```
 router.beforeEach((to, from, next) => {
     console.info("router beforeEach")
-    // ÕâÀïµÄnext·½·¨Ò»¶¨Òªµ÷
+    // è¿™é‡Œçš„nextæ–¹æ³•ä¸€å®šè¦è°ƒ
     if  (from.query.client ==='android') {
         WebViewJavascriptBridge.callHandler(
             'router'
             , to.fullPath
             , function(responseData) {
-                // android ´¥·¢ÁË·½·¨£¬ ¼ÌĞø×öÒ³ÃæÌø×ª
+                // android è§¦å‘äº†æ–¹æ³•ï¼Œ ç»§ç»­åšé¡µé¢è·³è½¬
                 console.info("router callback, process next: " + responseData)
                 if (responseData) {
                     console.info("router next: " + false)
@@ -68,21 +68,21 @@ router.beforeEach((to, from, next) => {
     }
 })
 ```
-2. ÔÚJava´úÂëÖĞ, Ìí¼ÓÀ¹½Øºó¹æÔòºÍºóĞø²Ù×÷´úÂë,·µ»Øtrue±íÊ¾JS²»¼ÌĞøÌø×ª,·µ»Øfalse±íÊ¾JS¼ÌĞøÌø×ª
+2. åœ¨Javaä»£ç ä¸­, æ·»åŠ æ‹¦æˆªåè§„åˆ™å’Œåç»­æ“ä½œä»£ç ,è¿”å›trueè¡¨ç¤ºJSä¸ç»§ç»­è·³è½¬,è¿”å›falseè¡¨ç¤ºJSç»§ç»­è·³è½¬
 ```
 bridgeWebView.setOnRouterCallback(new BridgeWebView.OnRouterCallback() {
             @Override
             public boolean handleRouter(String url, CallBackFunction function) {
-                // TODO: 2017/3/29 Õë¶ÔĞèÒªµÄurl½øĞĞÀ¹½Ø, À¹½ØºóĞèÒª·µ»Øtrue
+                // TODO: 2017/3/29 é’ˆå¯¹éœ€è¦çš„urlè¿›è¡Œæ‹¦æˆª, æ‹¦æˆªåéœ€è¦è¿”å›true
                 return false;
             }
         });
 ```        
 
 
-#### JSµ÷ÓÃJava·½·¨
-Òª´ÓJSµ÷ÓÃJava·½·¨,ĞèÒªÔÚJavaÖĞÏëWebView×¢²áÒ»¸ö·½·¨,È»ºóÔÚJSÖĞÍ¨¹ıWebViewJavascriptBridgeÀ´µ÷ÓÃ
-1. JavaÖĞ×¢²áÒ»¸ö·½·¨
+#### JSè°ƒç”¨Javaæ–¹æ³•
+è¦ä»JSè°ƒç”¨Javaæ–¹æ³•,éœ€è¦åœ¨Javaä¸­æƒ³WebViewæ³¨å†Œä¸€ä¸ªæ–¹æ³•,ç„¶ååœ¨JSä¸­é€šè¿‡WebViewJavascriptBridgeæ¥è°ƒç”¨
+1. Javaä¸­æ³¨å†Œä¸€ä¸ªæ–¹æ³•
 ```
 webView.registerHandler("submitFromWeb", new BridgeHandler() {
         @Override
@@ -92,7 +92,7 @@ webView.registerHandler("submitFromWeb", new BridgeHandler() {
         }
     });
 ```
-2. JSÖĞµ÷ÓÃJava·½·¨
+2. JSä¸­è°ƒç”¨Javaæ–¹æ³•
 ```
 WebViewJavascriptBridge.callHandler(
         'submitFromWeb'
@@ -102,13 +102,13 @@ WebViewJavascriptBridge.callHandler(
         }
     );
 ```
-×¢Òâ: 
+æ³¨æ„: 
 
-#### Javaµ÷JS·½·¨
-Javaµ÷JS·½·¨Á÷³ÌºÍÉÏÃæ´óÖÂÒ»Ñù,Ö»²»¹ı»»³ÉÊÇJSĞèÒªÏÈ×¢²áÒ»¸ö·Å(ÎªÁË±£Ö¤×¢²á³É¹¦»¹ĞèÒªÒ»¸ö¸¨Öúº¯Êı)
-1. JSÖĞ¶¨ÒåÒ»¸ö×¢²á·½·¨µÄ¸¨Öúº¯Êı
+#### Javaè°ƒJSæ–¹æ³•
+Javaè°ƒJSæ–¹æ³•æµç¨‹å’Œä¸Šé¢å¤§è‡´ä¸€æ ·,åªä¸è¿‡æ¢æˆæ˜¯JSéœ€è¦å…ˆæ³¨å†Œä¸€ä¸ªæ”¾(ä¸ºäº†ä¿è¯æ³¨å†ŒæˆåŠŸè¿˜éœ€è¦ä¸€ä¸ªè¾…åŠ©å‡½æ•°)
+1. JSä¸­å®šä¹‰ä¸€ä¸ªæ³¨å†Œæ–¹æ³•çš„è¾…åŠ©å‡½æ•°
 ```
-// È·±£³É¹¦×¢²áJS·½·¨µÄº¯Êı,¾ßÌå¿´ÄÚ²¿Âß¼­
+// ç¡®ä¿æˆåŠŸæ³¨å†ŒJSæ–¹æ³•çš„å‡½æ•°,å…·ä½“çœ‹å†…éƒ¨é€»è¾‘
     function connectWebViewJavascriptBridge(callback) {
         if (window.WebViewJavascriptBridge) {
             callback(WebViewJavascriptBridge)
@@ -123,11 +123,11 @@ Javaµ÷JS·½·¨Á÷³ÌºÍÉÏÃæ´óÖÂÒ»Ñù,Ö»²»¹ı»»³ÉÊÇJSĞèÒªÏÈ×¢²áÒ»¸ö·Å(ÎªÁË±£Ö¤×¢²á³É¹¦»¹
         }
     }
 ```
-2. ÔÚÒ³Ãæ¼ÓÔØÍêºó(VueµÄcreated·½·¨,×¢²áÒ»¸ö·½·¨)
+2. åœ¨é¡µé¢åŠ è½½å®Œå(Vueçš„createdæ–¹æ³•,æ³¨å†Œä¸€ä¸ªæ–¹æ³•)
 ```
 created () {
       if (from.query.client === 'android') {
-          // ×¢²á·½·¨¸øJSµ÷ÓÃ
+          // æ³¨å†Œæ–¹æ³•ç»™JSè°ƒç”¨
           connectWebViewJavascriptBridge(() => {
               WebViewJavascriptBridge.registerHandler("functionInJs", function (data, responseCallback) {
                   document.getElementById("show").innerHTML = ("data from Java: = " + data);
@@ -140,11 +140,11 @@ created () {
 ```
 
 
-### Ô­ÀíºÍÓÅÊÆ
-Android WebView ±¾ÉíÖ§³ÖH5ºÍnativeµÄ½»»¥; µ«ÊÇ´æÔÚÎÊÌâ:
-1. ²»Í¬Android°æ±¾Ö®¼äÊµÏÖ´æÔÚ²îÒì, ĞèÒª¿ª·¢ÕßÊµÏÖ°æ±¾¼æÈİ;
-2. µÍ°æ±¾ÉÏ¿ÉÄÜÊÜµ½¹¥»÷;
-3. Ê¹ÓÃÊ±ÈİÒ×ÒıÆğÄÚ´æĞ¹Â©µÈÎÊÌâ.
+### åŸç†å’Œä¼˜åŠ¿
+Android WebView æœ¬èº«æ”¯æŒH5å’Œnativeçš„äº¤äº’; ä½†æ˜¯å­˜åœ¨é—®é¢˜:
+1. ä¸åŒAndroidç‰ˆæœ¬ä¹‹é—´å®ç°å­˜åœ¨å·®å¼‚, éœ€è¦å¼€å‘è€…å®ç°ç‰ˆæœ¬å…¼å®¹;
+2. ä½ç‰ˆæœ¬ä¸Šå¯èƒ½å—åˆ°æ”»å‡»;
+3. ä½¿ç”¨æ—¶å®¹æ˜“å¼•èµ·å†…å­˜æ³„æ¼ç­‰é—®é¢˜.
 
-Ö÷ÒªÔ­Àí²Î¿¼:http://android.jobbole.com/82507/  
-²»¹ı¼àÌıJSµÄ»Øµ÷Ê¹ÓÃµÄÊÇWebViewClientµÄshouldOverrideUrlLoading()·½·¨.
+ä¸»è¦åŸç†å‚è€ƒ:http://android.jobbole.com/82507/  
+ä¸è¿‡ç›‘å¬JSçš„å›è°ƒä½¿ç”¨çš„æ˜¯WebViewClientçš„shouldOverrideUrlLoading()æ–¹æ³•.
