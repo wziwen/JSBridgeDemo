@@ -21,6 +21,7 @@ router.beforeEach((to, from, next) => {
     console.info("router beforeEach")
     // 这里的next方法一定要调
     // if  (from.query.client ==='android') {
+    if  (window.WebViewJavascriptBridge) {
         WebViewJavascriptBridge.callHandler(
             'router'
             , to.fullPath
@@ -36,11 +37,11 @@ router.beforeEach((to, from, next) => {
                 }
             }
         )
-    // }
-    // else {
-    //     console.info("router beforeEach")
-    //     next(true)
-    // }
+    }
+    else {
+        console.info("router beforeEach")
+        next(true)
+    }
 })
 
 new Vue({
