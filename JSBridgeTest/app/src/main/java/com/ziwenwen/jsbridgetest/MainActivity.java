@@ -13,7 +13,7 @@ import com.github.lzyzsd.jsbridge.CallBackFunction;
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private static final String HOST_URL = "http://192.168.2.60:8080/#/";
-    private static final String HOME_URL = "http://192.168.2.60:8080/#/?client=android";
+    private static final String HOME_URL = "http://192.168.31.181:8080/#/?client=android";
 
     private BridgeWebView bridgeWebView;
 
@@ -29,7 +29,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean handleRouter(String url, CallBackFunction function) {
                 // TODO: 2017/3/29 针对需要的url进行拦截, 拦截后需要返回true
-                Log.d(TAG, "handler router: " + url);
+                Log.d(TAG, "handler router to url: " + url);
+                Log.d(TAG, "handler router current url: " + bridgeWebView.getUrl());
                 Toast.makeText(MainActivity.this, "router" + url, Toast.LENGTH_SHORT).show();
                 return false;
             }

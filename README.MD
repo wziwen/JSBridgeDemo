@@ -1,7 +1,15 @@
-### 使用
+### JSBridge使用
+
+#### 代码运行
+先启动Vue项目
+```
+npm install 
+npm run dev
+```
+Android项目需要修改MainActivity.java里面的HOME_URL.
 #### 添加依赖
 这里使用的JSBridge来自GitHub(https://github.com/lzyzsd/JsBridge).  
-因为GitHub上的版本使用时引入后不能再继续使用WebView.setWebViewClient()方法,如果需要WebView.setWebViewClient()使用修改后的代码(代码在柬埔寨Top-Android项目中可以找到.两种方式根据需要选择:
+因为GitHub上的版本使用时引入后不能再继续使用WebView.setWebViewClient()方法,如果需要WebView.setWebViewClient()使用修改后的代码(jsbridge文件夹）.两种方式根据需要选择:
 * 修改版代码:
 1. 找到 jsbridge 文件夹到项目.
 2. 在项目的settings.gradle文件添加一行:
@@ -48,6 +56,7 @@ router.beforeEach((to, from, next) => {
     console.info("router beforeEach")
     // 这里的next方法一定要调
     // if  (from.query.client ==='android') {
+	// WebViewJavascriptBridge 由Java注入，需要判断是非存在
     if  (window.WebViewJavascriptBridge) {
         WebViewJavascriptBridge.callHandler(
             'router'
