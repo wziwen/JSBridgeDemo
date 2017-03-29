@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
                 // TODO: 2017/3/29 针对需要的url进行拦截, 拦截后需要返回true
                 Log.d(TAG, "handler router: " + url);
                 Toast.makeText(MainActivity.this, "router" + url, Toast.LENGTH_SHORT).show();
-                return true;
+                return false;
             }
         });
 

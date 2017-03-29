@@ -18,23 +18,29 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-    let link
-    if  (from.query.client ==='android') {
+    console.info("router beforeEach")
+    // 这里的next方法一定要调
+    // if  (from.query.client ==='android') {
         WebViewJavascriptBridge.callHandler(
             'router'
             , to.fullPath
             , function(responseData) {
                 // android 触发了方法， 继续做页面跳转
-                console.info("router callback, process next")
-                next(true)
+                console.info("router callback, process next: " + responseData)
+                if (responseData === 'true') {
+                    console.info("router next: " + false)
+                    next(false)
+                } else {
+                    console.info("router next: " + true)
+                    next(true)
+                }
             }
         )
-        // 跳转交给原生处理， 这里不做跳转。稍后如果要跳转原生会要触发上面callHandler的回掉方法
-        link = false
-    } else {
-        link = true
-    }
-    next(link)
+    // }
+    // else {
+    //     console.info("router beforeEach")
+    //     next(true)
+    // }
 })
 
 new Vue({

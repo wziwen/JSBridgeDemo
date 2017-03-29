@@ -97,10 +97,11 @@ public class BridgeWebView extends WebView implements WebViewJavascriptBridge {
                 Log.i(TAG, "handler = router, data from web = " + url);
                 // 上层程序处理了跳转后， 需要返回true， 表明js不再做页面跳转
                 if (onRouterCallback != null && onRouterCallback.handleRouter(url, function)) {
+                    function.onCallBack("true");
                     return;
                 } else {
                     // 上层程序没有处理跳转， 通知Js继续做页面跳转
-                    function.onCallBack(null);
+                    function.onCallBack("false");
                 }
             }
         });
