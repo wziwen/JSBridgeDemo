@@ -3,13 +3,13 @@
         <img src="./assets/logo.png">
         <h1></h1>
         <h2>Essential Links</h2>
-        <button @click="callJavaClick">调用Java方法</button>
+        <button style="font-size: 36px;width: 80%; height: 60px;" @click="callJavaClick">调用Java方法</button>
         <p>
             <!-- 使用 router-link 组件来导航. -->
             <!-- 通过传入 `to` 属性指定链接. -->
             <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
-            <router-link to="/foo">Go to Foo</router-link>
-            <router-link to="/bar">Go to Bar</router-link>
+            <router-link style="width: 30%;margin-right: 1%" to="/foo">Go to Foo</router-link>
+            <router-link style="width: 30%;margin-left: 1%" to="/bar">Go to Bar</router-link>
         </p>
         <router-view></router-view>
     </div>
@@ -69,6 +69,7 @@
 <style lang="scss">
     #app {
         font-family: 'Avenir', Helvetica, Arial, sans-serif;
+        font-size: 36px;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
